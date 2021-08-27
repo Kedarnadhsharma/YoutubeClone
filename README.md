@@ -18,17 +18,17 @@
       COPY --from=builder ./app/build /usr/share/nginx/html
 2. Dockerfile.dev
       FROM node:14-alpine AS development
-      # Add a work directory
+      
       WORKDIR /app
-      # Cache and Install dependencies
+    
       COPY package.json .
 
       RUN yarn install
-      # Copy app files
+    
       COPY . .
-      # Expose port
+    
       EXPOSE 3000
-      # Start the app
+    
       CMD [ "yarn", "start" ]
 
 ### Run the docker image in Development mode
