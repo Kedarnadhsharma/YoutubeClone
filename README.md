@@ -34,11 +34,15 @@
 ### Run the docker image in Development mode
 
    docker build -f Dockerfile.dev -t react-docker-dev . 
+   
+   
    docker run -p 3000:3000 react-docker-dev
 
 ### Run the docker image in Production mode
 
    docker build -f Dockerfile -t react-docker-prod . 
+   
+   
    docker run -p 4000:80 react-docker-prod
    
 Since we are using NGINX as the webserver to host our application, and it uses the default port 80 to expose the application, we are mapping the port 4000 to the NGINX port number 80. 
